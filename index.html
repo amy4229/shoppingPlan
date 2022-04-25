@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingPlan</title>
+    <script defer src="./src/js/index.js"></script>
+    <script defer src="./src/js/modal.js"></script>
+    <link rel="stylesheet" href="./src/css/styles.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="title">Shopping Plan</div>
+            <button class="clear-btn">Clear</button>
+        </header>
+        <main>
+            <ul class="list"></ul>
+        </main>
+        <footer>
+            <div class="plus-btn">+</div>
+            <div class="total">
+            </div>
+            <div class="bought">
+            </div>
+            <div class="left">
+            </div>
+        </footer>
+        <div class="greyout hidden"></div>
+        <div class="modal hidden">
+            <span>아이템 이름을 적어주세요</span>
+            <input type="text" name="name" autocomplete="off"/>
+            <button>확 인</button>
+        </div>
+    </div>
+</body>
+
+</html>
