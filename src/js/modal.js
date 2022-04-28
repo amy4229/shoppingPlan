@@ -1,12 +1,12 @@
 const modal = document.querySelector(".modal");
 const greyout = document.querySelector(".greyout");
-const item = modal.querySelector("input");
+const itemInput = modal.querySelector("input");
 const addBtn = modal.querySelector("button");
 
 
 plusBtn.addEventListener("click", openModal);
 greyout.addEventListener("click", closeModal);
-item.addEventListener("keydown", (event)=>{
+itemInput.addEventListener("keydown", (event)=>{
     if(event.key === "Enter"){
         handleSubmitAddBtn() ;
     }
@@ -17,13 +17,12 @@ item.addEventListener("keydown", (event)=>{
 addBtn.addEventListener("click", handleSubmitAddBtn);
 
 function handleSubmitAddBtn(event){
-    //event.preventDefault();
-    itemName = item.value.trim();
+    itemName = itemInput.value.trim();
     if(itemName){
         addShoppingItem(itemName);
         closeModal();
         countFooterLabels();
-        item.value = "";
+        itemInput.value = "";
     } 
 }
 
@@ -31,7 +30,7 @@ function handleSubmitAddBtn(event){
 function openModal() {
     greyout.classList.remove("hidden");
     modal.classList.remove("hidden");
-    item.focus();
+    itemInput.focus();
 }
 
 function closeModal() {

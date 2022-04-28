@@ -12,6 +12,13 @@ clearBtn.addEventListener("click", () => {
     countFooterLabels();
 })
 
+itemList.addEventListener("click",function(event){
+    if (event.target.classList.contains("delete")){
+        onDelete(event);
+    }else if(event.target.classList.contains("check")){
+        onCheck(event);
+    }
+})
 
 function countFooterLabels() {
 
@@ -32,16 +39,10 @@ function addShoppingItem(itemName) {
         <button class="delete">🗑️</button>
     `;
     itemList.appendChild(li);
-
-    const deleteBtn = li.querySelector(".delete");
-    deleteBtn.addEventListener("click", handleDelete);
-    li.scrollIntoView({behavior:"smooth"});
-    
-    const boughtCheck = li.querySelector(".check");
-    boughtCheck.addEventListener("change", handleCheck);
+    li.scrollIntoView({"behavior":"smooth"});
 }
 
-function handleCheck(event){
+function onCheck(event){
     const ischeck = event.target.checked;
     console.log(ischeck);
     const node = event.target.parentNode;
@@ -56,7 +57,7 @@ function handleCheck(event){
     countFooterLabels();
 }
 
-function handleDelete(event) {
+function onDelete(event) {
     const node = event.target.parentNode;
     itemList.removeChild(node);
     countFooterLabels();
